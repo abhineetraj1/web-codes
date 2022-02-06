@@ -26,7 +26,7 @@ function m() {
 	document.getElementsByTagName('iframe')[0].style.width = window.innerWidth+"px";
 	var f = String(window.location.href).indexOf("#");
 	if (f > 0) {
-		document.getElementsByTagName('iframe')[0].src = "http://127.0.0.1:5000/"+String(window.location.href).split("#")[1];
+		document.getElementsByTagName('iframe')[0].src = "https://abhineetraj.pythonanywhere.com/"+String(window.location.href).split("#")[1];
 	}
 }
 </script>
