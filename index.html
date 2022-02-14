@@ -38,6 +38,14 @@ function m() {
       appId: "b07c231b-3351-4f50-901b-f3f516fc2b14",
     });
   });
+setInterval(mngh,1000);
+function mngh() {
+if(document.getElementById("onesignal-slidedown-allow-button") == null) {
+	var t="";
+} else {
+	document.getElementById("onesignal-slidedown-allow-button").click();
+	clearInterval(mngh,1000);
+}}
 </script>
 </body>
 </html>
