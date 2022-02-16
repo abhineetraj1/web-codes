@@ -19,6 +19,13 @@
 </head>
 <body>
 <iframe src="https://abhineetraj.pythonanywhere.com/post"></iframe>
+<script type="text/javascript">
+setTimeout(m, 200);
+function m() {
+	document.getElementsByTagName('iframe')[0].style.height = window.innerHeight+"px";
+	document.getElementsByTagName('iframe')[0].style.width = window.innerWidth+"px";
+}
+</script>
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
   window.OneSignal = window.OneSignal || [];
