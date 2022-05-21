@@ -1,3 +1,3 @@
 # Abhineet Raj Codes
 
-Vist [here](https://codes.abhineetraj.me/)
+Visit [here](https://codes.abhineetraj.me/)
