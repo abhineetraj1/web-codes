@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content=""><meta name="description" content=""><meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>MitM attack</title>
+    <link rel="shortcut icon" href="images/5.png">
+    <link rel="stylesheet" href="/nicepage.css" media="screen">
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/nicepage.js" defer=""></script>
+<meta name="generator" content="Nicepage 4.10.5, nicepage.com"></head>
+<body class="u-body u-post-editor u-xl-mode" data-style="blank" data-posts="" data-global-section-properties="{&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}}" data-source="" data-page-sections-style="[]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}" data-page-category="&quot;Basic&quot;" data-back-link="https://nicepage.com/website-design" data-back-link-title="Website Design" data-wp-back-link="https://nicepage.com/wordpress-themes" data-wp-back-link-title="WordPress Theme" data-jm-back-link="https://nicepage.com/joomla-templates" data-jm-back-link-title="Joomla Template" data-created-with-link="https://nicepage.com/static-site-generator" data-created-with-title="Static Website Generators" data-wp-created-with-link="https://nicepage.com/wordpress-website-builder" data-wp-created-with-title="WordPress Website Builder" data-jm-created-with-link="https://nicepage.com/joomla-page-builder" data-jm-created-with-title="Joomla Page Builder"><section class="u-clearfix u-valign-top u-block-a0f8-1" custom-posts-hash="T" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" data-id="a0f8" data-posts-content="[{'images':[],'maps':[],'videos':[],'icons':[],'textWidth':'','textHeight':'','id':1,'headingProp':'h3','textProp':'text'}]" id="sec-ae2c">
+  <div class="fr-view u-clearfix u-rich-text u-text u-block-a0f8-4"><p><span style="font-weight: 700; font-size: 1.5rem;">Man-in-the-middle (MitM) attack</span></p><p><span style="font-size: 1.5rem;">A MitM attack occurs when a hacker inserts itself between the communications of a client and a server. Here are some common types of man-in-the-middle attacks:</span></p><p><span style="font-weight: 700; font-size: 1.5rem;">&nbsp;Session hijacking</span></p><p><span style="font-size: 1.5rem;">In this type of MitM attack, an attacker hijacks a session between a trusted client and network server. The attacking computer substitutes its IP address for the trusted client while the server continues the session, believing it is communicating with the client. For instance, the attack might unfold like this:</span></p><ol><li style="font-size: 1.5rem;">A client connects to a server.</li><li style="font-size: 1.5rem;">The attacker’s computer gains control of the client.</li><li style="font-size: 1.5rem;">The attacker’s computer disconnects the client from the server.</li><li style="font-size: 1.5rem;">The attacker’s computer replaces the client’s IP address with its own IP address and spoofs the client’s sequence numbers.</li><li style="font-size: 1.5rem;">The attacker’s computer continues dialog with the server and the server believes it is still communicating with the client.</li><li style="font-size: 1.5rem;">Most Common Types of Cyber Attack Man-in-the-middle attack Stage 1</li><li style="font-size: 1.5rem;">Most Common Types of Cyber Attack Man-in-the-middle attack Stage 2</li></ol><p><span style="font-size: 1.5rem;"><br></span></p><p><span style="font-weight: 700; font-size: 1.5rem;">&nbsp;IP Spoofing</span></p><p><span style="font-size: 1.5rem;">IP spoofing is used by an attacker to convince a system that it is communicating with a known, trusted entity and provide the attacker with access to the system. The attacker sends a packet with the IP source address of a known, trusted host instead of its own IP source address to a target host. The target host might accept the packet and act upon it.</span></p><p><span style="font-weight: 700; font-size: 1.5rem;">&nbsp;Replay</span></p><ul><li style="font-size: 1.5rem;">A replay attack occurs when an attacker intercepts and saves old messages and then tries to send them later, impersonating one of the participants. This type can be easily countered with session timestamps or nonce (a random number or a string that changes with time).</li><li style="font-size: 1.5rem;">Currently, there is no single technology or configuration to prevent all MitM attacks. Generally, encryption and digital certificates provide an effective safeguard against MitM attacks, assuring both the confidentiality and integrity of communications. But a man-in-the-middle attack can be injected into the middle of communications in such a way that encryption will not help — for example, attacker “A” &nbsp;intercepts public key of person “P” and substitute it with his own public key. Then, anyone wanting to send an encrypted message to P using P’s public key is unknowingly using A’s public key. Therefore, A can read the message intended for P and then send the message to P, encrypted in P’s real public key, and P will never notice that the message was compromised. In addition, A could also modify the message before resending it to P. As you can see, P is using encryption and thinks that his information is protected but it is not, because of the MitM attack.</li><li style="font-size: 1.5rem;">So, how can you make sure that P’s public key belongs to P and not to A? Certificate authorities and hash functions were created to solve this problem. When person 2 (P2) wants to send a message to P, and P wants to be sure that A will not read or modify the message and that the message actually came from P2, the following method must be used:-</li></ul><p><span style="font-size: 1.5rem;"><br></span></p><ul><li style="font-size: 1.5rem;">P2 creates a symmetric key and encrypts it with P’s public key.</li><li style="font-size: 1.5rem;">P2 sends the encrypted symmetric key to P.</li><li style="font-size: 1.5rem;">P2 computes a hash function of the message and digitally signs it.</li><li style="font-size: 1.5rem;">P2 encrypts his message and the message’s signed hash using the symmetric key and sends the entire thing to P.</li><li style="font-size: 1.5rem;">P is able to receive the symmetric key from P2 because only he has the private key to decrypt the encryption.</li><li style="font-size: 1.5rem;">P, and only P, can decrypt the symmetrically encrypted message and signed hash because he has the symmetric key.</li><li style="font-size: 1.5rem;">He is able to verify that the message has not been altered because he can compute the hash of received message and compare it with digitally signed one.</li><li style="font-size: 1.5rem;">P is also able to prove to himself that P2 was the sender because only P2 can sign the hash so that it is verified with P2 public key.</li></ul></div>
+  <style data-mode="XL" data-visited="true">@media (min-width: 1200px) {
+  .u-block-a0f8-1 {
+    min-height: 500px;
+  }
+  .u-block-a0f8-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="LG">@media (max-width: 1199px) and (min-width: 992px) {
+  .u-block-a0f8-1 {
+    min-height: 500px;
+  }
+  .u-block-a0f8-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="MD">@media (max-width: 991px) and (min-width: 768px) {
+  .u-block-a0f8-1 {
+    min-height: 500px;
+  }
+  .u-block-a0f8-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="SM">@media (max-width: 767px) and (min-width: 576px) {
+  .u-block-a0f8-1 {
+    min-height: 500px;
+  }
+  .u-block-a0f8-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+  <style data-mode="XS">@media (max-width: 575px) {
+  .u-block-a0f8-1 {
+    min-height: 500px;
+  }
+  .u-block-a0f8-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+</section>
+</body></html>

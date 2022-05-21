@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content=""><meta name="description" content=""><meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Web Assembly Language</title>
+    <link rel="shortcut icon" href="images/5.png">
+    <link rel="stylesheet" href="/nicepage.css" media="screen">
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/nicepage.js" defer=""></script>
+<meta name="generator" content="Nicepage 4.10.5, nicepage.com"></head>
+<body class="u-body u-post-editor u-xl-mode" data-style="blank" data-posts="" data-global-section-properties="{&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}}" data-source="" data-page-sections-style="[]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}" data-page-category="&quot;Basic&quot;" data-back-link="https://nicepage.com/html-templates" data-back-link-title="HTML Template" data-wp-back-link="https://nicepage.com/wordpress-themes" data-wp-back-link-title="WordPress Theme" data-jm-back-link="https://nicepage.com/joomla-templates" data-jm-back-link-title="Free Joomla Templates" data-created-with-link="https://nicepage.app" data-created-with-title="Best Free Website Builder" data-wp-created-with-link="https://nicepage.com/wordpress-website-builder" data-wp-created-with-title="WordPress Website Builder" data-jm-created-with-link="https://nicepage.com/joomla-page-builder" data-jm-created-with-title="Joomla Website Builder"><section class="u-clearfix u-valign-top u-block-783b-1" custom-posts-hash="T" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" data-id="783b" data-posts-content="[{'images':[],'maps':[],'videos':[],'icons':[],'textWidth':'','textHeight':'','id':1,'headingProp':'h3','textProp':'text'}]" id="sec-8fa8">
+  <div class="fr-view u-clearfix u-rich-text u-text u-block-783b-4"><p><span style="font-weight: 700; font-size: 1.5rem;">Web Assembly Language</span></p><ul><li style="font-size: 1.5rem;">WebAssembly brings languages other than HTML, CSS and JavaScript to the browser, it’s not a JavaScript replacement and it takes a very different approach from Flash, Active X plugins and other techniques that encapsulated non-web code for browsers.</li><li style="font-size: 1.5rem;">WASM’s startup time is faster than V8, and will be able to run on IoT devices with small amounts of memory and storage (potentially, under 1GB memory and 50MB of storage). JavaScript runtimes have been aggressively optimized for performance; that’s going to happen to WASM too. JavaScript will benefit from that work when it’s running outside the browser, in serverless environments or ones that don’t allow JIT compilation (on iOS or a game console). With no cold start issues, the portability and low resource consumption would make WebAssembly ideal for the edge, on services like Cloudflare Workers and Fastly’s Compute Edge.</li><li style="font-size: 1.5rem;">This approach is a logical extension of using the browser sandbox to isolate third-party libraries—like font-rendering engines and image or audio decoders that might have bugs or vulnerabilities. But WebAssembly is also built to make it easier for developers to create safe applications (and stay safe while taking dependencies on third-party code).</li><li style="font-size: 1.5rem;">Because it was designed to run in the browser and avoid the security issues that plagued Flash and Active X, WebAssembly was designed for isolation without losing performance. The browser needs to be able to parse, validate and compile WASM code while a web page is loading, and that code always runs inside a sandbox.</li><li style="font-size: 1.5rem;">WebAssembly is designed to try and avoid entire classes of bugs and vulnerabilities like buffer overflows and control-flow hijacking. Because languages like C and C++ use pointers to the address in memory where the value in a variable is stored, WebAssembly code needs a secure way to get access to a very specific section of memory and nothing else. WebAssembly uses a linear block of memory, and a WebAssembly module only has access to the chunk of memory assigned to it; there’s no shared memory between modules and (at least for now), and there’s no garbage collection.</li><li style="font-size: 1.5rem;">WASM separates code and data. It has a static type system with type checking and a very structured control flow designed to make it easier to write code that compiles to be safe, with linear memory, global variables and stack memory accessed separately. This is also part of how WebAssembly stays portable. Although the machine code that actually runs when WASM code executes uses registers and that will be very specific to the CPU it’s running on, WebAssembly is a stack machine; rather than using registers to store data it’s operating on, WebAssembly pops data off the stack to work on and pushes the result back onto the stack.</li><li style="font-size: 1.5rem;">Currently, that data is only numbers, although there’s a proposal to add reference types &nbsp;— like strings, sequences, records, variants — to make it easier for WASM modules to interact with modules running in other runtimes or written in different languages. Another proposal, Web IDL bindings, will let the WASM module specify the “glue” it needs to call methods on the outside objects those new types will refer to.</li><li style="font-size: 1.5rem;">A WASM module doesn’t have access to APIs and system calls in the OS. If you want it to interact with anything outside the module you have to explicitly import it, so you know the only code running is what you’ve told the module about.</li><li style="font-size: 1.5rem;">When WebAssembly is running inside the browser, the browser handles its access to operating system features. For running WebAssembly outside the browser, like on a server or an IoT device, some of the issues will look very familiar to cloud native developers, such as handling the concept of a file system (which you need for saving code, configuration and shared data) on services that have no file system. Giving code full access to the operating system doesn’t just open up the possibility of attacks; it also ties the code to that specific operating system.</li><li style="font-size: 1.5rem;">To avoid that, WebAssembly uses the WebAssembly System Interface (WASI). It’s a modular set of system interfaces that looks like an abstracted OS, with low-level interfaces like IO and high-level interfaces like cryptography, keeping WebAssembly code portable.</li><li style="font-size: 1.5rem;">This improves security because it isolates modules and gives them only fine-grained permissions for particular parts of the file system (or other resources) and system calls; different modules are isolated from each other and limited in what they could pass on to any malicious code that attempted privilege escalation. It can also improve performance, for a scenario like copying data between containers; instead of having to move data between user and kernel space, send it across the network and then reverse the process, the data can just be piped into a sidecar, using a faster and simpler calling mechanism.</li></ul><p><span style="font-weight: 700; font-size: 1.5rem;">Productivity Boost</span></p><ul><li style="font-size: 1.5rem;">But the big advantage for cloud development isn’t just security for untrusted code. It’s productivity for developers and for the cloud service providers who build SDKs for them, Terlson suggested.</li><li style="font-size: 1.5rem;">Imagine a developer trying out a cloud messaging service like Azure Service Bus; they want to test their code by dropping a message into the queue, and they want that to be easy in whatever language they’re using. Just using the Azure CLI means downloading a Python interpreter because that’s the language it’s implemented in. If it delivers the long-awaited “write once, run anywhere” promise, WebAssembly could turn that on its head. </li></ul></div>
+  <style data-mode="XL">@media (min-width: 1200px) {
+  .u-block-783b-1 {
+    min-height: 500px;
+  }
+  .u-block-783b-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="LG">@media (max-width: 1199px) and (min-width: 992px) {
+  .u-block-783b-1 {
+    min-height: 500px;
+  }
+  .u-block-783b-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="MD">@media (max-width: 991px) and (min-width: 768px) {
+  .u-block-783b-1 {
+    min-height: 500px;
+  }
+  .u-block-783b-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="SM">@media (max-width: 767px) and (min-width: 576px) {
+  .u-block-783b-1 {
+    min-height: 500px;
+  }
+  .u-block-783b-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+  <style data-mode="XS">@media (max-width: 575px) {
+  .u-block-783b-1 {
+    min-height: 500px;
+  }
+  .u-block-783b-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+</section>
+</body></html>

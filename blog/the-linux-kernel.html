@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content=""><meta name="description" content=""><meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>The Linux Kernel</title>
+    <link rel="shortcut icon" href="images/5.png">
+    <link rel="stylesheet" href="/nicepage.css" media="screen">
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/nicepage.js" defer=""></script>
+<meta name="generator" content="Nicepage 4.10.5, nicepage.com"></head>
+<body class="u-body u-post-editor u-xl-mode" data-style="blank" data-posts="" data-global-section-properties="{&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}}" data-source="" data-page-sections-style="[]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}" data-page-category="&quot;Basic&quot;"><section class="u-clearfix u-valign-top u-block-f551-1" custom-posts-hash="T" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" data-id="f551" data-posts-content="[{'images':[],'maps':[],'videos':[],'icons':[],'textWidth':'','textHeight':'','id':1,'headingProp':'h3','textProp':'text'}]" id="sec-a8f4">
+  <div class="fr-view u-clearfix u-rich-text u-text u-block-f551-4"><p><span style="font-weight: 700; font-size: 1.5rem;">The Linux Kernel</span></p><ul><li style="font-size: 1.5rem;">its first release on September 17, 1991, the Linux kernel has defied all odds to be Linux’s defining component. It was released by Linus Torvalds and makes use of the GNU/Linux to describe the operating system. &nbsp;Linux kernel-based Android OS on smartphones has made Linux beat its competition to be the largest installed OS base of all general-purpose operating systems.</li><li style="font-size: 1.5rem;">A kernel can either be monolithic, microkernel or hybrid (like the OS X and Windows 7). The Linux kernel is a monolithic computer operating system kernel that resembles the UNIX system. The Linux line of Operating Systems commonly referred to as Linux Distributions are based on this kernel. &nbsp;The monolithic kernel, unlike the microkernel, not only encompasses the Central Processing Unit, memory and IPC but also has device drivers, system server calls and file system management. They are best at communicating with hardware and performing several tasks simultaneously. It is for this reason that processes here react at a fast rate.</li><li style="font-size: 1.5rem;">However, the few setbacks are the huge install and memory footprint needed and inadequate security as everything operates in a supervisor mode. In contrast, a microkernel may react slowly to application calls as user services and the kernel are separated. They are thus smaller in size when compared to the monolithic kernel. &nbsp;Microkernels are easily extensible, but more code is needed to write a microkernel. The Linux kernel is written in the C and Assembly programming languages.</li></ul><p><span style="font-weight: 700; font-size: 1.5rem;">The Linux kernel relationship with the Hardware</span></p><p><span style="font-size: 1.5rem;">The kernel can manage the system’s hardware through what is referred to as interrupts. When the hardware wants to interface with the system, an interrupt is issued that interrupts the processor that in turn does the same to the kernel. To provide synchronization, the kernel can disable interrupts, be it a single one or all of them. In Linux, however, the interrupt handlers do not run in a process context, they instead run in an interrupt context not associated with any process.This particular interrupt context exists solely to let an interrupt handler quickly respond to an individual interrupt and then finally exit.</span></p><p><span style="font-weight: 700; font-size: 1.5rem;">Components of the Linux Kernel</span></p><ul><li style="font-size: 1.5rem;">A kernel is simply a resource manager; the resource being managed may be a process, memory or hardware device. It manages and arbitrates access to the resource between multiple competing users. The Linux kernel exists in the kernel space, below the userspace, which is where the user’s applications are executed. For the user space to communicate with the kernel space, a GNU C Library is incorporated which provides a forum for the system call interface to connect to the kernel space and allow transition back to the userspace.</li><li style="font-size: 1.5rem;">The architectural perspective of the Linux kernel consists of: System call interface, Process Management, the Virtual File system, Memory Management, Network Stack, Architecture and the Device Drivers.</li></ul><p><span style="font-weight: 700; font-size: 1.5rem;">Linux kernel interfaces</span></p><p><span style="font-size: 1.5rem;">The Linux kernel offers various interfaces to the user space applications that perform a variety of tasks and have different properties. Two distinct Application Programming Interface (API) exist; the kernel-user space and the kernel internal. The Linux API is the kernel-userspace API; it gives access to programs in the user space into the system resources and services of the kernel. It is made up of the System Call Interface and the subroutines from the GNU C Library.</span></p><p><span style="font-size: 1.5rem;"><br></span></p><p><span style="font-weight: 700; font-size: 1.5rem;">Linux ABI</span></p><p><span style="font-size: 1.5rem;">This refers to the kernel-user space ABI (Application Binary Interface). This is explained as the interface that exists between program modules. When comparing API and ABI, the difference is that ABI’s are used to access external codes that are already compiled while API are structures for managing software. Defining an important ABI is majorly the work of Linux distributions than it is for the Linux kernel. A specific ABI should be defined for each instruction set, for example, x86-64. End-users of Linux products are interested in the ABIs rather than the API.</span></p><p><span style="font-size: 1.5rem;"><br></span></p><p><span style="font-weight: 700; font-size: 1.5rem;">Portable Operating System Interface(POSIX)</span></p><p><span style="font-size: 1.5rem;">POSIX is a collective term of standards for maintaining compatibility among the operating systems. It declares the API together with utility interfaces and command line shells. The Linux API, not only has the usable features defined by the POSIX but also has additional features in its kernel.</span></p><ol><li style="font-size: 1.5rem;">Cgroups subsystem.</li><li style="font-size: 1.5rem;">The Direct Rendering Manager’s system calls.</li><li style="font-size: 1.5rem;">A readahead feature.</li><li style="font-size: 1.5rem;">Getrandom call that is present in V 3.17.</li><li style="font-size: 1.5rem;">System calls such as futex, epoll, splice, dnotify, fanotify and inotify.</li></ol><p><span style="font-size: 1.5rem;"><br></span></p><p><span style="font-weight: 700; font-size: 1.5rem;">The modular kernel</span></p><p><span style="font-size: 1.5rem;">Previous versions of the Linux kernel were in such a way that all their parts were statically fixed into one, monolithic. However, modern Linux kernels have most of their functionality contained in modules that are put into the kernel dynamically. This in contrast to monolithic types, is referred to as modular kernels. Such a setup allows a user to load or replace modules in a running kernel without the need of rebooting.</span></p><p><span style="font-size: 1.5rem;"><br></span></p><p><span style="font-weight: 700; font-size: 1.5rem;">The Linux Loadable Kernel Module (LKM)</span></p><ul><li style="font-size: 1.5rem;">The basic way of adding code in the Linux kernel is through the introduction of source files to the kernel source tree. However, you may want to add a code while the kernel is running. The code added this way is referred to as a loadable kernel module. These particular modules perform various tasks but are specified into three: device drivers, file system drivers and system calls.</li><li style="font-size: 1.5rem;">The loadable kernel module can be compared to the kernel extensions in other operating systems. You can put a module into the kernel by either loading it as an LKM or binding it into the base kernel.</li></ul><p><span style="font-size: 1.5rem;"><br></span></p><p><span style="font-weight: 700; font-size: 1.5rem;">Conclusion</span></p><p><span style="font-size: 1.5rem;">The Linux kernel mainly acts as a resource manager acting as an abstract layer for the applications. The applications have a connection with the kernel which in turn interacts with the hardware and services the applications. Linux is a multitasking system allowing multiple processes to execute concurrently. The Linux kernel is popular due to its open source nature that allows users to alter the kernel to what is suitable for them and their hardware. Therefore it can be used in a variety of devices, unlike other operating systems.&nbsp;</span></p></div>
+  <style data-mode="XL" data-visited="true">@media (min-width: 1200px) {
+  .u-block-f551-1 {
+    min-height: 500px;
+  }
+  .u-block-f551-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="LG">@media (max-width: 1199px) and (min-width: 992px) {
+  .u-block-f551-1 {
+    min-height: 500px;
+  }
+  .u-block-f551-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="MD">@media (max-width: 991px) and (min-width: 768px) {
+  .u-block-f551-1 {
+    min-height: 500px;
+  }
+  .u-block-f551-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="SM">@media (max-width: 767px) and (min-width: 576px) {
+  .u-block-f551-1 {
+    min-height: 500px;
+  }
+  .u-block-f551-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+  <style data-mode="XS">@media (max-width: 575px) {
+  .u-block-f551-1 {
+    min-height: 500px;
+  }
+  .u-block-f551-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+</section>
+</body></html>

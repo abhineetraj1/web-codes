@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content=""><meta name="description" content=""><meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Denial-of-service (DoS) and distributed denial-of-service (DDoS) attacks</title>
+    <link rel="shortcut icon" href="images/5.png">
+    <link rel="stylesheet" href="/nicepage.css" media="screen">
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/nicepage.js" defer=""></script>
+<meta name="generator" content="Nicepage 4.10.5, nicepage.com"></head>
+<body class="u-body u-post-editor u-xl-mode" data-style="blank" data-posts="" data-global-section-properties="{&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}}" data-source="" data-page-sections-style="[]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}" data-page-category="&quot;Basic&quot;" data-back-link="https://nicepage.com/html-templates" data-back-link-title="HTML Template" data-wp-back-link="https://nicepage.com/wordpress-themes" data-wp-back-link-title="WordPress Theme" data-jm-back-link="https://nicepage.com/joomla-templates" data-jm-back-link-title="Joomla Templates" data-created-with-link="https://nicepage.com/static-site-generator" data-created-with-title="Static Site Generator" data-wp-created-with-link="https://nicepage.com/wordpress-website-builder" data-wp-created-with-title="WordPress Website Builder" data-jm-created-with-link="https://nicepage.com/joomla-page-builder" data-jm-created-with-title="Joomla Template Creator"><section class="u-clearfix u-valign-top u-block-eb04-1" custom-posts-hash="T" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" data-id="eb04" data-posts-content="[{'images':[],'maps':[],'videos':[],'icons':[],'textWidth':'','textHeight':'','id':1,'headingProp':'h3','textProp':'text'}]" id="sec-7b7a">
+  <div class="fr-view u-clearfix u-rich-text u-text u-block-eb04-4"><p><span style="font-size: 1.5rem; font-weight: 700;">Denial-of-service (DoS) and distributed denial-of-service (DDoS) attacks</span></p><ul><li style="font-size: 1.5rem;">A denial-of-service attack overwhelms a system’s resources so that it cannot respond to service requests. A DDoS attack is also an attack on system’s resources, but it is launched from a large number of other host machines that are infected by malicious software controlled by the attacker.</li><li style="font-size: 1.5rem;">Unlike attacks that are designed to enable the attacker to gain or increase access, denial-of-service doesn’t provide direct benefits for attackers. For some of them, it’s enough to have the satisfaction of service denial. However, if the attacked resource belongs to a business competitor, then the benefit to the attacker may be real enough. Another purpose of a DoS attack can be to take a system offline so that a different kind of attack can be launched. One common example is session hijacking, which I’ll describe later.</li></ul><p><span style="font-weight: 700; font-size: 1.5rem;">There are different types of DoS and DDoS attacks; the most common are TCP SYN flood attack, teardrop attack, smurf attack, ping-of-death attack and botnets.</span></p><p><span style="font-weight: 700; font-size: 1.5rem;">&nbsp;TCP SYN flood attack</span></p><p><span style="font-size: 1.5rem;">In this attack, an attacker exploits the use of the buffer space during a Transmission Control Protocol (TCP) session initialization handshake. The attacker’s device floods the target system’s small in-process queue with connection requests, but it does not respond when the target system replies to those requests. This causes the target system to time out while waiting for the response from the attacker’s device, which makes the system crash or become unusable when the connection queue fills up.</span></p><p><span style="font-weight: 700; font-size: 1.5rem;">There are a few countermeasures to a TCP SYN flood attack:</span></p><ul><li style="font-size: 1.5rem;">Place servers behind a firewall configured to stop inbound SYN packets. Increase the size of the connection queue and decrease the timeout on open connections. Teardrop attack This attack causes the length and fragmentation offset fields in sequential Internet Protocol (IP) packets to overlap one another on the attacked host; the attacked system attempts to reconstruct packets during the process but fails. The target system then becomes confused and crashes.</li><li style="font-size: 1.5rem;">If users don’t have patches to protect against this DoS attack, disable SMBv2 and block ports 139 and 445.</li></ul><p><span style="font-weight: 700; font-size: 1.5rem;">&nbsp;Smurf attack</span></p><ul><li style="font-size: 1.5rem;">This attack involves using IP spoofing and the ICMP to saturate a target network with traffic. This attack method uses ICMP echo requests targeted at broadcast IP addresses. These ICMP requests originate from a spoofed “victim” address. For instance, if the intended victim address is 10.0.0.10, the attacker would spoof an ICMP echo request from 10.0.0.10 to the broadcast address 10.255.255.255. This request would go to all IPs in the range, with all the responses going back to 10.0.0.10, overwhelming the network. This process is repeatable, and can be automated to generate huge amounts of network congestion.</li><li style="font-size: 1.5rem;">To protect your devices from this attack, you need to disable IP-directed broadcasts at the routers. This will prevent the ICMP echo broadcast request at the network devices. Another option would be to configure the end systems to keep them from responding to ICMP packets from broadcast addresses.</li></ul><p><span style="font-weight: 700; font-size: 1.5rem;">&nbsp;Ping of death attack</span></p><ul><li style="font-size: 1.5rem;">This type of attack uses IP packets to ‘ping a target system with an IP size over the maximum of 65,535 bytes. IP packets of this size are not allowed, so attacker fragments the IP packet. Once the target system reassembles the packet, it can experience buffer overflows and other crashes.</li><li style="font-size: 1.5rem;">Ping of death attacks can be blocked by using a firewall that will check fragmented IP packets for maximum size.</li></ul><p><span style="font-weight: 700; font-size: 1.5rem;">&nbsp;Botnets</span></p><p><span style="font-size: 1.5rem;">Botnets are the millions of systems infected with malware under hacker control in order to carry out DDoS attacks. These bots or zombie systems are used to carry out attacks against the target systems, often overwhelming the target system’s bandwidth and processing capabilities. These DDoS attacks are difficult to trace because botnets are located in differing geographic locations.</span></p><p><span style="font-weight: 700; font-size: 1.5rem;">Botnets can be mitigated by:</span></p><p><span style="font-size: 1.5rem;">RFC3704 filtering, which will deny traffic from spoofed addresses and help ensure that traffic is traceable to its correct source network. For example, RFC3704 filtering will drop packets from bogon list addresses. Black hole filtering, which drops undesirable traffic before it enters a protected network. When a DDoS attack is detected, the BGP (Border Gateway Protocol) host should send routing updates to ISP routers so that they route all traffic heading to victim servers to a null0 interface at the next hop&nbsp;</span></p></div>
+  <style data-mode="XL" data-visited="true">@media (min-width: 1200px) {
+  .u-block-eb04-1 {
+    min-height: 500px;
+  }
+  .u-block-eb04-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="LG">@media (max-width: 1199px) and (min-width: 992px) {
+  .u-block-eb04-1 {
+    min-height: 500px;
+  }
+  .u-block-eb04-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="MD">@media (max-width: 991px) and (min-width: 768px) {
+  .u-block-eb04-1 {
+    min-height: 500px;
+  }
+  .u-block-eb04-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}</style>
+  <style data-mode="SM">@media (max-width: 767px) and (min-width: 576px) {
+  .u-block-eb04-1 {
+    min-height: 500px;
+  }
+  .u-block-eb04-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+  <style data-mode="XS">@media (max-width: 575px) {
+  .u-block-eb04-1 {
+    min-height: 500px;
+  }
+  .u-block-eb04-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}</style>
+</section>
+</body></html>
